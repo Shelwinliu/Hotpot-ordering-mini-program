@@ -1,0 +1,20 @@
+<!--pages/home/home.wxml-->
+<view class="container">
+  <image class="trademark" src="https://i.loli.net/2021/05/06/acdv5jxQHFiMBOu.jpg"></image>
+  <text class="t_style">"安逸得很" 智慧餐厅</text>
+  <text class="t_style1">我们只做全中国最巴适的火锅</text>
+  <!-- <view class="btn">
+    <button class="b_style" catchtap="get_UserInfo" data-id= "1">已到店，扫码点餐</button>
+    <button class="b_style" type="primary" catchtap="get_UserInfo" data-id="0">未到店，提前预点</button>
+  </view> -->
+  <view class="logIn">
+    <form action="">
+      <text>账号：</text>
+      <input class="input1" id="userName" type="text" placeholder="请输入您的账号" bindinput="input_text1" focus="true" />
+      <text>密码：</text>
+      <input class="input" id="userPassword" type="password" placeholder="请输入您的密码" bindinput="input_text2" focus="" />
+      <button bindtap="verify">管理员登录</button>
+    </form>
+  </view>
+
+</view>

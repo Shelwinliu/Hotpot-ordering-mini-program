@@ -1,0 +1,86 @@
+/* pages/home/home.wxss */
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?tomleg');
+  src:  url('fonts/icomoon.eot?tomleg#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?tomleg') format('truetype'),
+    url('fonts/icomoon.woff?tomleg') format('woff'),
+    url('fonts/icomoon.svg?tomleg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+page {
+  background-image: url('https://i.loli.net/2021/05/09/n4EBZ9obJ6qpdXe.jpg');
+  background-size: 100% 100%;
+  position: fixed;
+}
+
+.container {
+  position: relative;
+  top: -50px; 
+}
+/* 首页商标 */
+.trademark {
+  overflow: hidden;
+  width: 300rpx;
+  height: 300rpx;
+  margin: 30rpx;
+  border-radius: 50%;
+  opacity: 0.8;
+  box-shadow: 10rpx 10rpx 60rpx #303030;
+}
+/* 商标下两行字体的样式 */
+.t_style {
+  font-size: larger;
+  font-weight: bold;
+}
+.t_style1 {
+  font-weight: bold;
+  font-size: medium;
+  font-style: oblique;
+  /* text-shadow: hoff voff blur #000; */
+  font-family:cursive; 
+  text-shadow:6rpx 2rpx 2rpx #333; 
+  color: #FF0040;
+  margin: 40rpx 0 80rpx 0;
+}
+
+/* 登录界面 */
+.logIn {
+  display: flex;
+  flex-direction: column;
+}
+.logIn form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500rpx;
+  height: 400rpx;
+  background-color: #fff;
+  background: transparent;
+  box-shadow: 10rpx 10rpx 40rpx #303030;
+  letter-spacing: 4rpx;
+  border-radius: 20rpx;
+  font-family: "Times New Roman", Times, serif;
+}
+.logIn text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logIn input {
+  margin-bottom: 20rpx;
+  padding: 10rpx 0 10rpx 110rpx;
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.logIn button {
+  margin-top: 30rpx;
+  background-color: #ffa300;
+  opacity: 0.9;
+  color: #fff;
+}
+
+
+

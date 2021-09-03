@@ -1,0 +1,17 @@
+<!--pages/home/home.wxml-->
+<view class="container">
+  <image class="trademark" src="https://i.loli.net/2021/05/06/acdv5jxQHFiMBOu.jpg"></image>
+  <text class="t_style">"安逸得很" 智慧餐厅</text>
+  <text class="t_style1">我们只做全中国最巴适的火锅</text>
+  <view class="btn">
+    <button class="b_style" catchtap="get_UserInfo" data-id= "1">已到店，扫码点餐</button>
+    <button class="b_style b_style1" type="primary" catchtap="get_UserInfo" data-id="0">未到店，提前预点</button>
+  </view>
+  <view class="bottom_text">
+    <text class="t_style2">落座后请扫描桌面二维码</text>
+  <icon type="search" style="font-size:14"></icon>
+  </view>
+
+  <view class="soc">
+  <image src="https://i.loli.net/2021/05/15/c4BfWUkNihZ2yxv.png"></image></view>
+</view>

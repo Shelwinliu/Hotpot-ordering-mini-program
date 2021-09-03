@@ -1,0 +1,118 @@
+/* pages/home/home.wxss */
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?tomleg');
+  src:  url('fonts/icomoon.eot?tomleg#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?tomleg') format('truetype'),
+    url('fonts/icomoon.woff?tomleg') format('woff'),
+    url('fonts/icomoon.svg?tomleg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+page {
+  background: url("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.caixin.com%2F2013-08-07%2F1375872733936727.jpg&refer=http%3A%2F%2Fimg.caixin.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1623656398&t=05989768ab19fed1bbc4b6a9d49b4647") no-repeat;
+  background-size: cover;
+}
+
+.container {
+  margin: 0 auto;
+  position: relative;
+  top: -50px; 
+}
+/* 首页商标 */
+.trademark {
+  overflow: hidden;
+  width: 300rpx;
+  height: 300rpx;
+  margin: 30rpx;
+  border-radius: 50%;
+  border: 1rpx solid gray;
+}
+/* 商标下两行字体的样式 */
+.t_style {
+  font-size: larger;
+  font-weight: bold;
+}
+.t_style1 {
+  font-weight: bold;
+  font-size: medium;
+  font-style: oblique;
+  /* text-shadow: hoff voff blur #000; */
+  font-family:cursive; 
+  text-shadow:6rpx 2rpx 2rpx #333; 
+  color: #FF0040;
+  margin: 40rpx 0 80rpx 0;
+}
+/* 按钮样式 */
+.btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.b_style {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  letter-spacing: 4rpx;
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  width: 140px !important;
+  border-radius: 20px; 
+  font-size: smaller;
+  color: #ffffff;
+  height: 80rpx;
+  background: linear-gradient(
+    120deg, #4481eb, #04befe, #4481eb
+  );
+}
+/* 按钮的框 */
+.b_style::before{
+  position: absolute;
+  content: " ";
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, .2);
+}
+.b_style1 {
+  background: linear-gradient(
+    120deg, #fa709a, #fee140, #fa709a
+  );
+}
+
+/* 最下方字体样式 */
+.bottom_text {
+  margin-top: 10rpx;
+  letter-spacing: 4rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.bottom_text .t_style2 {
+  font-size: smaller;
+  margin-right: 10rpx;
+}
+
+/* 足球样式 */
+.soc image {
+  margin-top: 100rpx;
+  position: absolute;
+  left: 40rpx;
+  width: 100rpx;
+  height: 100rpx;
+  animation: move 3s linear infinite alternate;
+}
+@keyframes move {
+  to {
+    transform: translate(550% ,0) rotate(1turn);
+  }
+}
+
+
+

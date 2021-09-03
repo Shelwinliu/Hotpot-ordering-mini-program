@@ -1,0 +1,80 @@
+.hotpot {
+  position: relative;
+  left: 200rpx;
+  width: 70%;
+  height: 220rpx;
+  margin-bottom: 10rpx;
+  border-radius: 20rpx;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4rpx);
+}
+
+
+._dish {
+  width: 50%;
+  height: 220rpx;
+  border-radius: 20rpx;
+  margin-right: 20rpx;
+}
+
+.d_name {
+  position: absolute;
+  top: 10rpx;
+  font-size: 14px;
+}
+
+.d_price {
+  float: right;
+  position: absolute;
+  bottom: 50rpx;
+  right: 10rpx;
+  color: #cbfd89;
+}
+
+/* 减号按钮 */
+.addDish text:first-child {
+  position:absolute;
+  bottom:9999rpx
+}
+.addDish text:first-child.active {
+  display: flex;
+  bottom: 12rpx;
+  right: 100rpx;
+  width: 36rpx;
+  height: 36rpx;
+  background-color: #c3a768;
+  border-radius: 50%;
+  color: #f5f5f5; 
+  align-items: center;
+  justify-content: center;
+}
+
+/* 所选数量 */
+.addDish .numBox {
+  position: absolute;
+  color:#f5f5f5;
+  bottom: 9999rpx;
+}
+.addDish .numBox.active {
+  size: 15;
+  bottom: 12rpx;
+  width: 50rpx;
+  right: 30rpx;
+  font-size: small;
+  color: black;
+} 
+
+/* 加号按钮 */
+.addDish text:last-child {
+  display: flex;
+  position: absolute;
+  bottom: 12rpx;
+  right: 12rpx;
+  width: 36rpx;
+  height: 36rpx;
+  background-color: #c3a768;
+  border-radius: 50%;
+  color: #f5f5f5; 
+  align-items: center;
+  justify-content: center;
+}

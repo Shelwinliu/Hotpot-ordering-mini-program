@@ -1,0 +1,79 @@
+/* pages/search/search.wxss */
+@import "../../styles/style.wxss";
+
+page {
+  background: url("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201502%2F25%2F20150225031540_tfxZu.thumb.400_0.jpeg&refer=http%3A%2F%2Fb-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1623649776&t=137373f5cd18f7a48a235457eac8640b");
+  background-size: cover;
+}
+
+.top_box {
+  display: flex;
+  flex-direction: row;
+  margin: 30rpx 20rpx;
+  margin-bottom: 12rpx;
+}
+
+/* 搜索框样式 */
+.search_box {
+  display: flex; 
+  padding: 10rpx 20rpx 10rpx 20rpx;
+  line-height: 48rpx;
+  align-items: center;
+  position: relative;
+  width: 500rpx;
+  height: 50rpx;
+  border-radius: 35rpx;
+  border: 2rpx solid transparent;
+  margin-right: 20rpx;
+  color: #B3B3B3;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4rpx);
+}
+.phcolor {
+  color: rgb(228, 219, 219);
+}
+
+.search_box icon {
+  display: flex;
+  align-items: center;
+  margin-right: 20rpx;
+}
+
+.search_box input {
+  width: 100%;
+}
+
+/* 删除输入内容样式 */
+.clearsearch {
+  position: absolute;
+  right: 10rpx;
+}
+.clearsearch icon {
+  display: flex;
+}
+
+.top_box button {
+  padding-left: 0;
+  padding-right: 0;
+  background-color: #fff;
+  font-size: 28rpx;
+  color: rgb(245, 221, 8);
+  width: 200rpx;
+  height: 70rpx;
+  border-radius: 35rpx;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4rpx);
+}
+
+/* 搜索后的菜品 */
+.searchResul {
+  margin-top: 50rpx;
+}
+
+.hotpot1 {
+  width: 80%;
+  left: 70rpx;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  border-right: 1px solid grey;
+}

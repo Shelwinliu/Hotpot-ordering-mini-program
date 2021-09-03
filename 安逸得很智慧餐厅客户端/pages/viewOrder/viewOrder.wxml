@@ -1,0 +1,58 @@
+<!--pages/viewOrder/viewOrder.wxml-->
+<view class="container">
+  <view class="loading" bindtap="returnCart">
+    <view></view>
+    <view></view>
+    <view></view>
+    <view></view>
+  </view>
+
+  <block wx:for="{{dishChosen}}">
+    <view class="box">
+      <!-- <span bindtap="a"></span> -->
+      <view class="square square1 {{flag == 1 ? 'active' : ''}}">
+        <!-- <text>用户名：</text>
+        <text>{{item.diner_name}}</text> -->
+      </view>
+      <view class="square square2">
+        <block wx:if="{{item.remark != null}}">
+          <text style="margin-top: 40rpx">备注</text>
+          <text>{{item.remark}}</text>
+        </block>
+      </view>
+
+      <view class="content" bindtap="squareAppear">
+        <a href="#" class="a_style a1" bindtap="del_myOrder" data-id="{{item._id}}">删除订单</a>
+
+        <text>下单时间</text>
+        <text style="margin-bottom: 40rpx;color: #ffbc00">{{item.orderTime}}</text>
+        <!-- <text>菜品</text> -->
+        <block wx:for="{{item.orderList}}">
+          <text>{{item.dish_name}}</text>
+          <!-- 数量 -->
+          <block wx:if="{{item.dishClassify == '锅底（必点）'}}">
+            <text decode="true" style="color: #ffbc00">¥{{item.dish_price}}/口 &nbsp;✖{{item.quantity}}</text>
+            <text class="underline"></text>
+          </block>
+          <block wx:elif="{{item.dishClassify == '酒水饮料'}}">
+            <text decode="true" style="color: #ffbc00">¥{{item.dish_price}}/瓶 &nbsp;✖{{item.quantity}}</text>
+            <text class="underline"></text>
+          </block>
+          <block wx:else>
+            <text decode="true" style="color: #ffbc00">¥{{item.dish_price}}/份 &nbsp;✖{{item.quantity}}</text>
+            <text class="underline"></text>
+          </block>
+        </block>
+        <text style="margin-top: 40rpx;color: #4dff03; font-weight: bold">总价：￥{{item.totalPrice}}</text>
+      </view>
+    </view>
+  </block>
+</view>
+
+<block wx:if="{{flag}}">
+  <view class="a">
+  <view class="b"></view>
+  <view class="c">您当前还没有任何订单</view>
+  <view class="c">赶紧点餐吧😤！</view>
+</view>
+</block>

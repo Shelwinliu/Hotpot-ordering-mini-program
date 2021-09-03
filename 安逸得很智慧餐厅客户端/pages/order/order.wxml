@@ -1,0 +1,130 @@
+<!--pages/order/order.wxml-->
+<!-- 轮播图区域 -->
+<view>
+  <swiper class="swiper-image" indicator-dots="true" indicator-active-color="#FF0000" autoplay="true" circular="true"
+    interval="3000">
+    <swiper-item wx:for="{{graph}}">
+      <image src="{{item.picSrc}}" mode="scaleToFill" lazy-load="true" style="width=100%"></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+<!-- 菜单页 -->
+<view class="menu">
+  <view class="nav_left {{scrollTop > 181 ? 'active' : ' '}}">
+    <view class="search" bindtap="searchDish">
+      <icon type="search"></icon>
+      <text style="font-size:small;font-weight:bold">搜 索</text>
+    </view>
+    <view class="nav_left_items {{curNav == 1 ? 'active' : ''}}" bindtap="switchRightTab" data-id="1">
+      锅底(必点)
+    </view>
+    <view class="nav_left_items {{curNav == 2 ? 'active' : ''}}" bindtap="switchRightTab" data-id="2">
+      店长推荐
+    </view>
+    <view class="nav_left_items {{curNav == 3 ? 'active' : ''}}" bindtap="switchRightTab" data-id="3">
+      荤菜嘎嘎
+    </view>
+    <view class="nav_left_items {{curNav == 4 ? 'active' : ''}}" bindtap="switchRightTab" data-id="4">
+      新鲜牛羊肉
+    </view>
+
+    <view class="nav_left_items {{curNav == 5 ? 'active' : ''}}" bindtap="switchRightTab" data-id="5">
+      酒水饮料
+    </view>
+
+    <view class="shop" bindtap="enterMall">
+      <view class="iconfont icon-gouwuchekong"></view>
+      <text hidden="{{curDishNum<=0}}" class="cartNum {{curDishNum > 0 ? 'active' : ''}}">{{curDishNum}}</text>
+    </view>
+  </view>
+
+  <!-- 右侧菜品栏 -->
+  <view>
+    <view wx:if="{{curNav==1}}">
+      <block wx:for="{{dish_group}}" wx:key='index'>
+        <view>
+          <view class="hotpot" wx:if="{{item.dishClassify=='锅底（必点）'}}">
+          <image class="_dish" mode="scaleToFill" lazy-load="true" src="{{item.dish_pic}}">
+          </image>
+          <text class="d_name">{{item.dish_name}}</text>
+          <text class="d_price">¥{{item.dish_price}}/口</text>
+          <!-- 数值 -->
+            <view class="addDish">
+            <text class="{{item.quantity > 0 ? 'active' : ''}}" bindtap="bindMinus" data-item="{{item}}">-</text>
+            <view class="numBox {{item.quantity > 0 ? 'active' : ''}}" data-id="{{item._id}}">{{item.quantity}}</view>
+            <text bindtap="bindPlus" data-item="{{item}}">+</text>
+          </view>
+        </view>
+      </view>
+      </block>
+    </view>
+
+    <view wx:if="{{curNav==2}}">
+      <block wx:for="{{dish_group}}">
+        <view class="hotpot" wx:if="{{item.dishClassify=='店长推荐'}}">
+          <image class="_dish" mode="scaleToFill" lazy-load="true" src="{{item.dish_pic}}">
+          </image>
+          <text class="d_name">{{item.dish_name}}</text>
+          <text class="d_price">¥{{item.dish_price}}/份</text>
+          <view class="addDish">
+            <text class="{{item.quantity > 0 ? 'active' : ''}}" bindtap="bindMinus" data-item="{{item}}">-</text>
+            <view class="numBox {{item.quantity > 0 ? 'active' : ''}}" data-id="{{item._id}}">{{item.quantity}}</view>
+            <text bindtap="bindPlus" data-item="{{item}}">+</text>
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <view wx:if="{{curNav==3}}">
+      <block wx:for="{{dish_group}}">
+        <view class="hotpot" wx:if="{{item.dishClassify=='荤菜嘎嘎'}}">
+          <image class="_dish" mode="scaleToFill" lazy-load="true" src="{{item.dish_pic}}">
+          </image>
+          <text class="d_name">{{item.dish_name}}</text>
+          <text class="d_price">¥{{item.dish_price}}/份</text>
+          <view class="addDish">
+            <text class="{{item.quantity > 0 ? 'active' : ''}}" bindtap="bindMinus" data-item="{{item}}">-</text>
+            <view class="numBox {{item.quantity > 0 ? 'active' : ''}}" data-id="{{item._id}}">{{item.quantity}}</view>
+            <text bindtap="bindPlus" data-item="{{item}}">+</text>
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <view wx:if="{{curNav==4}}">
+      <block wx:for="{{dish_group}}">
+        <view class="hotpot" wx:if="{{item.dishClassify=='新鲜牛羊肉'}}">
+          <image class="_dish" mode="scaleToFill" lazy-load="true" src="{{item.dish_pic}}">
+          </image>
+          <text class="d_name">{{item.dish_name}}</text>
+          <text class="d_price">¥{{item.dish_price}}/份</text>
+          <view class="addDish">
+            <text class="{{item.quantity > 0 ? 'active' : ''}}" bindtap="bindMinus" data-item="{{item}}">-</text>
+            <view class="numBox {{item.quantity > 0 ? 'active' : ''}}" data-id="{{item._id}}">{{item.quantity}}</view>
+            <text bindtap="bindPlus" data-item="{{item}}">+</text>
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <view wx:if="{{curNav==5}}">
+      <block wx:for="{{dish_group}}">
+        <view class="hotpot" wx:if="{{item.dishClassify == '酒水饮料'}}">
+          <image class="_dish" mode="scaleToFill" lazy-load="true" src="{{item.dish_pic}}">
+          </image>
+          <text class="d_name">{{item.dish_name}}</text>
+          <text class="d_price">¥{{item.dish_price}}/瓶</text>
+          <view class="addDish">
+            <text class="{{item.quantity > 0 ? 'active' : ''}}" bindtap="bindMinus" data-item="{{item}}">-</text>
+            <view class="numBox {{item.quantity > 0 ? 'active' : ''}}" data-id="{{item._id}}">{{item.quantity}}</view>
+            <text bindtap="bindPlus" data-item="{{item}}">+</text>
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <!-- 右侧菜品栏 -->
+
+  </view>
+</view>

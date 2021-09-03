@@ -1,0 +1,33 @@
+<!--pages/search/search.wxml-->
+<view class="top_box">
+  <view class='search_box search_box_mt'>
+    <!-- <image class="icon" src="https://i.ibb.co/0FSRJ4m/search.png"></image> -->
+    <icon type="search"></icon>
+    <input type='text' bindinput="input_text" style="width:260rpx;font-size:28rpx;" value="{{search_text}}"
+      placeholder='想吃什么搜一搜吧~' placeholder-class="phcolor" bindconfirm='input_text' confirm-type="search" focus="true"></input>
+    <view class='clearsearch' bindtap='clear_search'>
+      <icon type="clear" size="18" />
+    </view>
+  </view>
+  <button bindtap='returnMenu'>返回菜单</button>
+</view>
+
+<view class="searchResul">
+  <block wx:for="{{search_dish}}">
+    <view class="hotpot hotpot1">
+    <image class="_dish" mode="scaleToFill" lazy-load="true" src="{{item.dish_pic}}"></image>
+    <text class="d_name">{{item.dish_name}}</text>
+    <block wx:if="{{item.dishClassify=='锅底（必点）'}}">
+      <text class="d_price">¥{{item.dish_price}}/口</text>
+    </block>
+    <block wx:else>
+      <text class="d_price">¥{{item.dish_price}}/份</text>
+    </block>
+    <view class="addDish">
+      <text class="{{item.quantity > 0 ? 'active' : ''}}" bindtap="bindMinus" data-item="{{item}}">-</text>
+      <view class="numBox {{item.quantity > 0 ? 'active' : ''}}" data-id="{{item._id}}">{{item.quantity}}</view>
+      <text bindtap="bindPlus" data-item="{{item}}">+</text>
+    </view>
+  </view>
+  </block>
+</view>

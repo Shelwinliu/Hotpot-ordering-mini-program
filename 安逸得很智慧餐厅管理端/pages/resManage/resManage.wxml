@@ -1,0 +1,47 @@
+<!--pages/resManage/resManage.wxml-->
+<view class="orderPre">
+  <!-- <view>删除所有订单</view> -->
+  <block wx:for="{{dishChosen}}" wx:key='index'>
+      <view class="prepared">
+        <view class="topSec">
+          <text style="margin-bottom: 10rpx">用户名：{{item.diner_name}}</text>
+          <text style="margin-bottom: 10rpx">下单时间：{{item.orderTime}}</text>
+          <text wx:if="{{item.remark != null}}">备注：{{item.remark}}</text>
+          <text wx:else>备注：无</text>
+        </view>
+
+        <block wx:for="{{item.orderList}}">
+          <view class="cenSec">
+            <text>{{item.dish_name}}</text>
+            <text wx:if="{{item.dishClassify=='锅底（必点）'}}">¥{{item.dish_price}}/口</text>
+            <text wx:elif="{{item.dishClassify == '酒水饮料'}}">¥{{item.dish_price}}/瓶</text>
+            <text wx:else>¥{{item.dish_price}}/份</text>
+            <text>×{{item.quantity}}</text>
+          </view>
+        </block>
+
+        <view class="endSec">
+          <text>总价：{{item.totalPrice}}</text>
+          <text bindtap="finished" data-id="{{item._id}}">🤤制作完成❓</text>
+        </view>
+
+      </view>
+  </block>
+
+</view>
+
+<!-- 三角形动画 -->
+  <block wx:if="{{animate}}">
+    <view class="container">
+    <text>暂时还没有新订单，请</text>
+    <text>耐心等待</text>
+  </view>
+  </block>
+
+  <!-- 火箭 -->
+  <view class="rocket">
+    <image class="img {{roc == 1 ? 'active' : ''}}" src="https://i.loli.net/2021/05/12/yU9QE3fWSDjhi4G.png" alt="" mode="widthFix"></image>
+    <view class="flame {{roc == 1 ? 'active' : ''}}"></view>
+  </view>
+
+<!-- <a href="https://sm.ms/image/yU9QE3fWSDjhi4G" target="_blank"><img src="https://i.loli.net/2021/05/12/yU9QE3fWSDjhi4G.png" ></a> -->

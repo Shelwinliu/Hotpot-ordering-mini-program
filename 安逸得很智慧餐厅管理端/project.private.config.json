@@ -1,0 +1,29 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/resManage/resManage",
+          "pathName": "pages/resManage/resManage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/finishOrder/finishOrder",
+          "pathName": "pages/finishOrder/finishOrder",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

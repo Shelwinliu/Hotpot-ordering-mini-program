@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "16563767",
+      "name": "删 除 ",
+      "font_class": "cangpeitubiao_shanchu",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    }
+  ]
+}

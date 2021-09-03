@@ -1,0 +1,63 @@
+<!--pages/shoppingCart/shoppingCart.wxml-->
+<view>
+  <view class="topSec">
+    <view class="topLeftSec">共计{{dish_type}}道菜，总价 ¥ <text>{{totalAmount}}</text></view>
+    <view class="topRightSec" bindtap="cleanUp">清空</view>
+  </view>
+
+  <view hidden="{{dish_type>0}}" class="empty">
+    <view class="cartEmpty">
+      <view class="iconfont icon-gouwuchekong"></view>
+      <text>购物车空空如也~请重新点菜吧！</text>
+      <button bindtap="returnOrder">继续加单</button>
+    </view>
+  </view>
+
+  <!-- 显示用户所添加的菜品 -->
+  <block wx:for="{{dish_group}}" wx:key='index'>
+    <block wx:if="{{item.quantity > 0}}">
+      <view class="dishSec">
+        <!-- 分隔线 -->
+        <view class="dividingLine">{{item.dishClassify}}</view>
+
+        <view class="dishInfo">
+          <!-- 菜品头像 -->
+          <image class="userProfile" src="{{item.dish_pic}}"></image>
+          <text>{{item.dish_name}}</text>
+          <text wx:if="{{item.dishClassify=='锅底（必点）'}}">¥{{item.dish_price}}/口</text>
+          <text wx:else>¥{{item.dish_price}}/份</text>
+          <!-- <text>{{userInfo.nickName}}</text> -->
+        </view>
+
+        <view class="addDish addDish_sc">
+          <text class="{{item.quantity > 0 ? 'active' : ''}}" bindtap="bindMinus" data-item="{{item}}">-</text>
+          <view class="numBox {{item.quantity > 0 ? 'active' : ''}}" data-id="{{item._id}}">{{item.quantity}}</view>
+          <text bindtap="bindPlus" data-item="{{item}}">+</text>
+          <!-- <button bindtap="bindPlus" data-item="{{item}}">+</button> -->
+        </view>
+      </view>
+    </block>
+  </block>
+
+  <textarea hidden="{{dish_type<=0}}" name="" id="" cols="30" rows="10" placeholder="如果您有什么其他要求请留言，我们会尽量满足~"
+    placeholder-class="phcolor" bindinput="inputRemark"></textarea>
+
+  <view class="pay">
+    <button bindtap="check" class="b1">查看订单</button>
+    <button bindtap="uploadOrder" class="b2 {{flag == 1? 'active': ''}}">支付订单</button>
+  </view>
+
+</view>
+
+<!-- <section>
+  <div class="wave">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</section> -->
+<!-- <view class="c_order">
+  <view>
+    <text></text>
+  </view>
+</view> -->

@@ -1,0 +1,29 @@
+/* pages/finishOrder/finishOrder.wxss */
+@import "../../style/styles.wxss";
+@import "../../aliIcon/font_14ddteh8dw6n/iconfont.wxss";
+page {
+  background: url('https://gss0.baidu.com/70cFfyinKgQFm2e88IuM_a/forum/w%3D580/sign=d0cba3fbed50352ab16125006342fb1a/f678cd01a18b87d6cd470753030828381e30fdde.jpg')
+}
+
+.endSec text:nth-of-type(2){
+  background: transparent!important;
+  color: #ffe29f!important;
+}
+
+.container text:nth-of-type(1){
+  position: absolute;
+  left: -90rpx !important;
+  top: -270rpx;
+}
+.container text:nth-of-type(2) {
+  top: -183rpx;
+  left: -20rpx!important;
+}
+
+.orderPre .iconfont {
+  position: absolute;
+  top: 8rpx;
+  right: -32rpx;
+  font-size: x-large;
+  /* font-weight: bold; */
+}

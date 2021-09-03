@@ -1,0 +1,8 @@
+/* pages/resManage/resManage.wxss */
+@import "../../style/styles.wxss";
+page {
+  background: url('https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi3.article.fd.zol-img.com.cn%2Fg5%2FM00%2F0F%2F01%2FChMkJlqv5u-IXsWQAALgFfdQ9nYAAm2-QJZmz4AAuAt553.jpg&refer=http%3A%2F%2Fi3.article.fd.zol-img.com.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1623461772&t=85d896553dafef5deb42c7709868c83b');
+}
+.endSec text:nth-of-type(2) {
+  width: 220rpx;
+}
